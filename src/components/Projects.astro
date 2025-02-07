@@ -4,11 +4,14 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Netcore from "./icons/Netcore.astro"
+import Boostrap from "./icons/Boostrap.astro"
+import Python from "./icons/Python.astro"
 
 const TAGS = {
   NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
+    name: "Vue.js",
+    class: "bg-green-800 text-white",
     icon: NextJS,
   },
   TAILWIND: {
@@ -16,28 +19,52 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  NET: {
+    name: ".NET",
+    class: "bg-black text-white",
+    icon: Netcore,
+  },
+  BOOTSTRAP: {
+    name: "Boostrap",
+    class: "bg-violet-900 text-white",
+    icon: Boostrap,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-blue-500 text-white",
+    icon: Python,
+  },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "SIGLO WEB",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Software de clase mundial que permite llevar el control integral de operación de divisas en tiempo real.",
+    link: "https://www.scisa.com.mx/cambio-de-divisas",
+    image: "/projects/SIGLO.webp",
+    tags: [TAGS.NEXT, TAGS.BOOTSTRAP, TAGS.NET],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "SUMMAFX",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Plataforma para manejar el mercado electronico de divisas de manera eficiente y segura mediante el protocolo FIX ENGINE.",
+    link: "https://www.summafx.com/",
+    image: "/projects/summafx.webp",
+    tags: [TAGS.NEXT, TAGS.BOOTSTRAP, TAGS.NET],
   },
+  {
+    title: "Supercapacitores",
+    description:
+      "Aplicación de escritorio para calcular la capacitancia de supercapacitores en peliculas y polvos.",
+    link: "https://rlucioporto.com/",
+    github: "https://github.com/Chachacharli/SuperCapacitores-Software/tree/master?tab=readme-ov-file",
+    image: "/projects/volt.webp",
+    tags: [TAGS.PYTHON],
+  },
+
 ]
 ---
-
+<!--  -->
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
@@ -57,7 +84,7 @@ const PROJECTS = [
           {tags.map((tag) => (
             <li>
               <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3 `}
               >
                 <tag.icon class="size-4" />
                 {tag.name}
@@ -78,7 +105,7 @@ const PROJECTS = [
           {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
-              Preview
+              Link
             </LinkButton>
           )}
         </footer>
